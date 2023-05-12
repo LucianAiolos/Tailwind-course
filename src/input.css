@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* base styles don't target classes just html tags */
 @tailwind base;
+/* components can override base styles */
 @tailwind components;
-@tailwind utilities;
+/* utilities can override components and base styles */
+@tailwind utilities; 
+
+
+@layer base {
+  html {
+    font-family: "Quicksand", sans-serif;
+  }
+}
+
+@layer components {
+  .menu-item {
+    @apply relative flex items-center h-full p-4 font-bold text-pink-200 transition-colors ease-in-out cursor-pointer hover:text-zinc-200 hover:bg-white/10;
+  }
+}
