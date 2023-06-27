@@ -6,6 +6,7 @@
     <link href="../dist/output.css" rel="stylesheet" />
     <script defer src="./assets/fontawesome/js/solid.min.js"></script>
     <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script src="./index.js"></script>
   </head>
   <body>
     <main>
@@ -17,7 +18,39 @@
               tw:<span class="text-sky-900">mf</span>
             </div>
           </div>
-          <div class="flex items-center justify-end flex-1">
+          <div id="mobile-menu" 
+            class="block md:hidden ml-auto pr-4 my-auto cursor-pointer"
+            >
+            <div id="mobile-menu-button" class="group peer">
+              <div class="top-0 relative rounded-full w-8 bg-zinc-200 h-1 group-open:rotate-45 transition-all group-open:top-2"></div>
+              <div class="opacity-100 group-open:opacity-0 rounded-full w-8 bg-zinc-200 h-1 mt-1 transition-all"></div>
+              <div class="top-0 relative group-open:-rotate-45 rounded-full w-8 bg-zinc-200 h-1 mt-1 transition-all group-open:-top-2"></div>
+              <!-- peer-hover:to-black to make cool menu background transitions -->
+            </div>
+            <div class="absolute top-[64px] bg-gradient-to-r from-rose-600 to-pink-600 left-0 peer-open:block hidden w-full">
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>Home</span>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>Lineup</span>
+              </div>
+              <div id="tickets-menu-item" class="group relative  text-center p-4h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <div class="p-4 text-center font-bold">Tickets</div>
+                <div class="hidden group-open:block">
+                  <div class="relative text-pint-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out text-center p-4">
+                    <span>Single Day Ticket</span>
+                  </div>
+                  <div class="relative text-pint-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out text-center p-4">
+                    <span>7 Day Ticket</span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+          <div class="items-center justify-end flex-1 hidden md:flex ">
             <div class="menu-item">
               <span>Home</span>
             </div>
@@ -46,6 +79,29 @@
             </div>
           </div>
         </nav>
+        <!-- bg-fixed class makes a sort of basic parallax scrolling effect  -->
+        <div 
+          class="flex flex-col items-center justify-center h-[calc(100vh_-_200px)] min-h-[400px] bg-[url('./assets/images/hero.jpg')] bg-cover bg-center bg-fixed"
+          style="background-image: url('./assets/images/hero.jpg')"
+        >
+          <div class="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <div class="relative">
+              <img src="./assets/images/logo.png" width="175" alt="">
+            </div>
+            <div class="text-5xl font-bold">
+              tw:<span class="text-sky-900">mf</span>
+            </div>
+          </div>
+          <div class="font-bold mt-3 text-sm">Keep me updated with news and promotions</div>
+          <form class="mt-3 flex gap-2">
+            <input 
+              type="email" 
+              placeholder="email" 
+              class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500 focus:outline"
+            >
+            <button type="submit" class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg hover:shadow-black/20">Subscribe</button>
+          </form>
+        </div>
       </header>
     </main>
   </body>
